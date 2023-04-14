@@ -1,0 +1,12 @@
+/* .navbar-nav {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+}
+.navbar-nav > li {
+  margin-left: 20px;
+} */
+.navbar-default {
+  display: flex;
+  flex-direction: row;
+}
