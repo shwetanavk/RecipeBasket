@@ -6,10 +6,10 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  @Output() featureSelect = new EventEmitter<string>();
+  // @Output() featureSelect = new EventEmitter<string>();
   collapsed = true;
 
-  onSelect(feature: string) {
-    this.featureSelect.emit(feature);
-  }
+  // onSelect(feature: string) {
+  //   this.featureSelect.emit(feature);
+  // }
 }

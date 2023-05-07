@@ -9,8 +9,8 @@ import { eventNames } from 'process';
 export class AppComponent {
   title = 'RecipeBasket';
 
-  loadedFeature = 'recipe';
-  onNavigate(feature: string) {
-    this.loadedFeature = feature;
-  }
+  // loadedFeature = 'recipe';
+  // onNavigate(feature: string) {
+  //   this.loadedFeature = feature;
+  // }
 }
