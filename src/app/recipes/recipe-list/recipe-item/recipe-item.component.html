@@ -1,12 +1,12 @@
-<div class="card p-2">
-  <a href="#" class="list-group-item clearfix" (click)="onSelected()">
+<div class="card p-2" routerLinkActive="active">
+  <a class="list-group-item clearfix" style="cursor: pointer;" [routerLink]="[index]">
     <div class="d-flex align-items-center justify-content-between">
       <div>
         <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
         <p class="list-group-item-text" style="margin-bottom: 0;">{{ recipe.description }}</p>
       </div>
       <div>
-        <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-responsive" style="max-height: 50px;">
+        <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-responsive" style="height: 50px; width: 50px; object-fit: fill;">
       </div>
     </div>
   </a>
