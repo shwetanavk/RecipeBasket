@@ -6,6 +6,8 @@ import { Subject } from 'rxjs';
 
 @Injectable()
 export class RecipeService {
+  recipeSelected = new EventEmitter<Recipe>();
+
   private recipes: Recipe[] = [
     new Recipe(
       'French Omelette',
@@ -22,7 +24,7 @@ export class RecipeService {
     new Recipe(
       'Momos',
       'Recipe for a Momos',
-      'https://www.drukgirl.com/wp-content/uploads/2020/05/cabbage-momos-recipe.jpg',
+      'https://www.thespruceeats.com/thmb/UnVh_-znw7ikMUciZIx5sNqBtTU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/steamed-momos-wontons-1957616-hero-01-1c59e22bad0347daa8f0dfe12894bc3c.jpg',
       [new Ingredient('Flour', 1), new Ingredient('Cabbage', 1)]
     ),
     new Recipe(
@@ -30,10 +32,11 @@ export class RecipeService {
       'Recipe for a Aloo Dum',
       'https://www.vegrecipesofindia.com/wp-content/uploads/2012/04/kashmiri-dum-aloo-recipe-11a.jpg',
       [new Ingredient('Potato', 2), new Ingredient('Onions', 1)]
-    ),
+    )
   ];
 
   constructor(private shoppingListService: ShoppingListService) {}
+
   getRecipes() {
     return this.recipes.slice();
   }

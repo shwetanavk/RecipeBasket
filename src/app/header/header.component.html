@@ -1,75 +1,37 @@
-<div class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a href="#" class="navbar-brand">Recipe Basket</a>
-
-    <!-- class="navbar-bs-toggler" -->
-    <button
-      class="navbar-bs-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <div class="navbar-header">
+      <a class="navbar-brand" [routerLink]="'/'">Recipe Book</a>
+    </div> 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-default" id="navbarNav">
-      <ul class="nav navbar-nav">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <!-- <a href="#" class="nav-link" (click)="onSelect('recipe')">Recipes</a> -->
-          <a routerLink="/recipes" class="nav-link" routerLinkActive="active"
-            >Recipes</a
-          >
+          <a class="nav-link active" aria-current="page" routerLink="recipes" routerLinkActive="active">Recipes</a>
         </li>
         <li class="nav-item">
-          <!-- <a href="#" class="nav-link" (click)="onSelect('shopping-list')">Shopping List</a -->
-          <a
-            routerLink="/shopping-list"
-            class="nav-link"
-            routerLinkActive="active"
-            >Shopping List</a
-          >
+          <a class="nav-link" [routerLink]="'/shopping-list'" routerLinkActive="active">Shopping List</a>
         </li>
       </ul>
-
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown" appDropdown>
-          <a class="btn dropdown-toggle" data-bs-toggle="dropdown" role="button"
-            >Manage<span class="caret"></span>
-          </a>
+      <!-- <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Manage <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li>
-              <a style="cursor: pointer" class="dropdown-item">Save Data</a>
-            </li>
-            <li>
-              <a style="cursor: pointer" class="dropdown-item">Fetch Data</a>
-            </li>
-            <li>
-              <a style="cursor: pointer" class="dropdown-item">Save Data</a>
-            </li>
-            <li>
-              <a style="cursor: pointer" class="dropdown-item">Fetch Data</a>
-            </li>
+            <li><a class="dropdown-item">Save Data</a></li>
+            <li><a class="dropdown-item">Fetch Data</a></li>
           </ul>
         </li>
+      </ul> --> 
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link">Save Data</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Fetch Data</a>
+        </li>
       </ul>
-      <div class="dropdown">
-        <button
-          class="btn btn-secondary dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton1"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Dropdown button
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
     </div>
   </div>
-</div>
+</nav>
