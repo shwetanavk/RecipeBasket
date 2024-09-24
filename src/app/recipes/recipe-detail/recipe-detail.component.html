@@ -2,10 +2,11 @@
   <div class="row">
     <div class="col-xs-12">
       <img
-      [src]="recipe.imagePath"
-      alt="{{ recipe.name }}"
-      class="img-responsive"
-      style="max-height: 300px;">
+        [src]="recipe.imagePath"
+        alt="{{ recipe.name }}"
+        class="img-responsive"
+        style="max-height: 300px"
+      />
     </div>
   </div>
   <div class="row">
@@ -22,12 +23,29 @@
         Manage Recipe <span class="caret"></span>
       </button>
     </div> -->
-    <!-- <ul class="dropdown-menu"> -->
-      <ul class="list-group">
-        <li><a (click)="onAddToShoppingList()" style="cursor: pointer;">To Shopping List</a></li>
-        <li><a style="cursor: pointer;" routerLink="edit">Edit Recipe</a></li>
-        <li><a style="cursor: pointer;">Delete Recipe</a></li>
-      </ul>
+      <!-- <ul class="dropdown-menu"> -->
+      <div class="row mb-4">
+        <div class="col-sm-6 d-flex justify-content-between gap-2">
+          <button
+            (click)="onAddToShoppingList()"
+            type="button"
+            class="btn btn-success"
+            [disabled]="recipe.ingredients.length <= 0"
+          >
+            To Shopping List
+          </button>
+          <button routerLink="edit" type="button" class="btn btn-primary">
+            Edit
+          </button>
+          <button
+            (click)="onDeleteRecipe()"
+            type="button"
+            class="btn btn-danger"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   <div class="row">
@@ -38,8 +56,11 @@
   <div class="row">
     <div class="col-xs-12">
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
-          {{ingredient.name}} - {{ ingredient.amount}}
+        <li
+          class="list-group-item"
+          *ngFor="let ingredient of recipe.ingredients"
+        >
+          {{ ingredient.name }} - {{ ingredient.amount }}
         </li>
       </ul>
     </div>
