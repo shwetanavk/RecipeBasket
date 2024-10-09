@@ -16,11 +16,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isAuthenticated">
           <a
             class="nav-link active"
             aria-current="page"
-            routerLink="recipes"
+            routerLink="/recipes"
             routerLinkActive="active"
             >Recipes</a
           >
@@ -43,7 +43,7 @@
           </ul>
         </li>
       </ul> -->
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0" *ngIf="isAuthenticated">
         <li class="nav-item">
           <a class="nav-link" (click)="onSaveData()">Save Data</a>
         </li>
@@ -51,6 +51,9 @@
           <a class="nav-link" (click)="onFetchData()">Fetch Data</a>
         </li>
       </ul>
+      <button class="btn btn-secondary" (click)="onAuthenticate()">
+        {{ isAuthenticated ? "Logout" : "Login" }}
+      </button>
     </div>
   </div>
 </nav>
