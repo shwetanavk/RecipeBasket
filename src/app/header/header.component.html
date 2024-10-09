@@ -43,7 +43,7 @@
           </ul>
         </li>
       </ul> -->
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0" *ngIf="isAuthenticated">
         <li class="nav-item">
           <a class="nav-link" (click)="onSaveData()">Save Data</a>
         </li>

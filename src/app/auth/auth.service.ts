@@ -85,7 +85,6 @@ export class AuthService {
       case 'OPERATION_NOT_ALLOWED':
         errorMessage = 'This operation is not allowed.';
         break;
-
       case 'EMAIL_NOT_FOUND':
         errorMessage = 'The email is incorrect';
         break;
